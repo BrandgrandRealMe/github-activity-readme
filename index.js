@@ -4,10 +4,8 @@ const path = require("path");
 const { spawn } = require("child_process");
 const { Toolkit } = require("actions-toolkit");
 
-// Get config
-const GH_USERNAME = core.getInput("GH_USERNAME");
-const COMMIT_MSG = core.getInput("COMMIT_MSG");
-const MAX_LINES = core.getInput("MAX_LINES");
+const MAX_LINES = 5;
+
 /**
  * Returns the sentence case representation
  * @param {String} str - the string
@@ -17,7 +15,7 @@ const MAX_LINES = core.getInput("MAX_LINES");
 
 const capitalize = (str) => str.slice(0, 1).toUpperCase() + str.slice(1);
 
-const urlPrefix = "https://github.com";
+const urlPrefix = "https://github.com/";
 
 /**
  * Returns a URL in markdown format for PR's and issues
@@ -72,11 +70,15 @@ const commitFile = async () => {
     "config",
     "--global",
     "user.email",
-    "41898282+github-actions[bot]@users.noreply.github.com",
+    "readme-bot@example.com",
   ]);
   await exec("git", ["config", "--global", "user.name", "readme-bot"]);
   await exec("git", ["add", "README.md"]);
-  await exec("git", ["commit", "-m", COMMIT_MSG]);
+  await exec("git", [
+    "commit",
+    "-m",
+    ":zap: update readme with the recent activity",
+  ]);
   await exec("git", ["push"]);
 };
 
@@ -102,6 +104,8 @@ const serializers = {
 
 Toolkit.run(
   async (tools) => {
+    const GH_USERNAME = core.getInput("USERNAME");
+
     // Get the user's public events
     tools.log.debug(`Getting activity for ${GH_USERNAME}`);
     const events = await tools.github.activity.listPublicEventsForUser({
@@ -111,6 +115,7 @@ Toolkit.run(
     tools.log.debug(
       `Activity for ${GH_USERNAME}, ${events.data.length} events found.`
     );
+    tools.log.debug(events.data);
 
     const content = events.data
       // Filter out any boring activity
@@ -140,7 +145,7 @@ Toolkit.run(
     );
 
     if (!content.length) {
-      tools.exit.failure("No PullRequest/Issue/IssueComment events found");
+      tools.exit.failure("No events found");
     }
 
     if (content.length < 5) {
