@@ -39,3 +39,4 @@ The above job runs every half an hour, you can change it as you wish based on th
 You can find an example [here](https://github.com/jamesgeorge007/jamesgeorge007/blob/master/.github/workflows/update-readme.yml).
 
 _Inspired by [JasonEtco/activity-box](https://github.com/JasonEtco/activity-box)_
+
