@@ -129,7 +129,7 @@ Toolkit.run(
 
     // Find the index corresponding to <!--START_SECTION:activity--> comment
     let startIdx = readmeContent.findIndex(
-      (content) => content.trim() === "<!--START_SECTION:activity-->"
+      (content) => content.trim() === "<!--START_SECTION:activity-->/br| activity |/br| --- |"
     );
 
     // Early return in case the <!--START_SECTION:activity--> comment was not found
