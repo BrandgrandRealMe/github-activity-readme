@@ -2,7 +2,9 @@
 
 Updates `README.md` with the recent GitHub activity of a user.
 
-![image](https://user-images.githubusercontent.com/47084010/166125966-cf3dcca4-a032-4b10-96c7-a7564a705a67.png)
+| Example |
+| --- |
+<!--START_SECTION:activity-->
 
 ---
 
