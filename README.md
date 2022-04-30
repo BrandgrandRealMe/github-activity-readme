@@ -2,13 +2,13 @@
 
 Updates `README.md` with the recent GitHub activity of a user.
 
-<img width="735" alt="profile-repo" src="https://user-images.githubusercontent.com/25279263/87703301-3aa4a500-c7b8-11ea-8eb6-245121997a7b.png">
+![image](https://user-images.githubusercontent.com/47084010/166125966-cf3dcca4-a032-4b10-96c7-a7564a705a67.png)
 
 ---
 
 ## Instructions
 
-- Add the comment `<!--START_SECTION:activity-->` (entry point) within `README.md`. You can find an example [here](https://github.com/jamesgeorge007/jamesgeorge007/blob/master/README.md).
+- Add the comment `<!--START_SECTION:activity-->` (entry point) within `README.md`. You can find an example [here](https://github.com/BrandgrandRealMe/BrandgrandRealMe/blob/master/README.md).
 
 - It's the time to create a workflow file.
 
@@ -29,14 +29,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: jamesgeorge007/github-activity-readme@master
+      - uses: BrandgrandRealMe/github-activity-readme@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 The above job runs every half an hour, you can change it as you wish based on the [cron syntax](https://jasonet.co/posts/scheduled-actions/#the-cron-syntax).
 
-You can find an example [here](https://github.com/jamesgeorge007/jamesgeorge007/blob/master/.github/workflows/update-readme.yml).
+You can find an example [here](https://github.com/BrandgrandRealMe/BrandgrandRealMe/blob/master/.github/workflows/update-README.yml).
 
 _Inspired by [JasonEtco/activity-box](https://github.com/JasonEtco/activity-box)_
 
