@@ -1457,7 +1457,7 @@ module.exports = (function (modules, runtime) {
 			};
 
 			const actionIcon = (name, alt) =>
-				`<img alt="${alt}" src="https://github.com/cheesits456/github-activity-readme/raw/master/icons/${name}.png" align="top" height="18">`;
+				`<img alt="${alt}" src="https://github.com/BrandgrandRealMe/github-activity-readme/raw/master/icons/${name}.png" align="top" height="18">`;
 
 			/**
 			 * Execute shell command
