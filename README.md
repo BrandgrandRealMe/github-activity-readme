@@ -5,7 +5,7 @@ Updates `README.md` with the recent GitHub activity of a user.
 | Example |
 | --- |
 <!--START_SECTION:activity-->
-
+<!--END_SECTION:activity-->
 ---
 
 ## Instructions
