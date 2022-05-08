@@ -1,4 +1,4 @@
-name: GitHub - Activity - Readme
+name: GitHub - Activity - Readme - (Reborn)
 description: (Reborn) Updates README with the recent GitHub activity of a user
 author: BrandgrandRealMe
 
@@ -8,7 +8,7 @@ inputs:
     default: ${{ github.repository_owner }}
 
 branding:
-  color: yellow
+  color: blue
   icon: activity
 
 runs:
